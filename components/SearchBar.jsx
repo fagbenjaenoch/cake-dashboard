@@ -1,28 +1,31 @@
-import React, { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
+import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 function handleSubmit(e) {
-  e.preventDefault()
-  onSearch(searchTerm)
+  e.preventDefault();
+  onSearch(searchTerm);
 }
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <form onSubmit={handleSubmit} className='flex items-center space-x-2 p-1 mb-4 border-b border-gray-500'>
-      <button type='submit'>
-        <FaSearch className='text-gray-500 mr-2'/>
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center p-1 mb-4 border-b border-gray-800 text-gray-800 focus-within:text-white focus-within:border-gray-200"
+    >
+      <button type="submit">
+        <FaSearch className="mr-2" />
       </button>
       <input
-        type='text'
-        placeholder='Search'
+        type="text"
+        placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className='text-white bg-transparent outline-none w-full'
+        className="bg-transparent text-gray-800 outline-none w-full placeholder:text-gray-800"
       />
     </form>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
