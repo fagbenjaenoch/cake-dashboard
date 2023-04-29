@@ -10,18 +10,22 @@ import {
 } from "react-icons/tb";
 
 import SearchBar from "./SearchBar";
+import Tabs from "./Tabs";
+import { sideBarTabs } from "@/data/sidebarTabs";
 
-const Sidebar = () => {
+const Sidebar = ({ children }) => {
   return (
-    <div className="fixed h-screen bg-black border-r-gray p-4 text-white shadow-xl text-sm">
-      <div className="mb-4">
-        <span className="text-extrabold text-lg">Cake </span>
-        <span className="text-gray-500 text-sm">Dashboard</span>
-      </div>
-      <SearchBar />
-      <span className="text-gray-500 mb-4">Menu</span>
+    <div className="flex">
+      <div className="fixed h-screen bg-black border-r-gray p-4 text-white shadow-xl text-sm">
+        <div className="mb-4">
+          <span className="text-extrabold text-lg">Cake </span>
+          <span className="text-gray-500 text-sm">Dashboard</span>
+        </div>
+        <SearchBar />
+        <span className="text-gray-500 mb-4">Menu</span>
 
-      <div className="flex gap-5 items-center text-gray-500 hover:text-white cursor-pointer hover:bg-gray-900 p-2 rounded-lg mb-2 group relative">
+        <Tabs tabs={sideBarTabs} />
+        {/* <div className="flex gap-5 items-center text-gray-500 hover:text-white cursor-pointer hover:bg-gray-900 p-2 rounded-lg mb-2 group relative">
         <div className="hidden group-hover:block absolute bg-white py-2 px-0.5 rounded-lg left-0 mr-12"></div>
         <TbRectangle size={25} />
         <div className="w-full flex items-center justify-between">
@@ -93,8 +97,11 @@ const Sidebar = () => {
             <div>Status</div>
             <AiOutlineDown className="cursor-pointer" />
           </div>
-        </div>
+        </div> */}
       </div>
+      <main className="ml-[13.6rem] w-full bg-gray-200 h-screen">
+        {children}
+      </main>
     </div>
   );
 };
