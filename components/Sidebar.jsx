@@ -70,7 +70,6 @@ const Sidebar = () => {
           <TbSettings size={25}/>
           <div className='w-full flex items-center justify-between'>
             <div>Settings</div>
-            <AiOutlineDown className='cursor-pointer'/>
           </div>
         </div>
       </div>
