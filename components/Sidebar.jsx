@@ -79,7 +79,7 @@ const Sidebar = () => {
           <TbSettings size={25} />
           <div className="w-full flex items-center justify-between">
             <div>Settings</div>
-            <div className="bg-white px-3 text-black font-bold rounded-lg text-sm">
+            <div className="bg-white px-3 text-black font-bold rounded-full text-sm">
               2
             </div>
           </div>

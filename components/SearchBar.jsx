@@ -34,8 +34,11 @@ const SearchBar = () => {
       className={`flex items-center p-1 mb-4 border-b border-gray-800 text-gray-800 ${
         isHovered && !isFocused && "text-gray-400 border-gray-400"
       }
-      ${isHovered && isFocused && "text-gray-100 border-gray-200"}
-      ${isHovered && isFocused && "placeholder:text-white"} 
+      ${
+        isHovered &&
+        isFocused &&
+        "placeholder:text-white text-gray-100 border-gray-200"
+      }
       ${isFocused && "placeholder:text-white text-gray-100 border-gray-200"}
       `}
     >
