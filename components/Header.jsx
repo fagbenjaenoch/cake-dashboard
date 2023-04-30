@@ -18,7 +18,7 @@ const Header = () => {
           Here&apos;s what happening in your Cake account today
         </p>
       </div>
-      <div className="flex flex-row items-center gap-5">
+      <div className="hidden lg:flex lg:flex-row items-center gap-5">
         <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-lg">
           <TbSearch className="text-gray-300" size={20} />
           <input
