@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tab from "./Tab";
+import Dropdown from "./Dropdown";
 
 const Tabs = ({ tabs }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -9,22 +10,30 @@ const Tabs = ({ tabs }) => {
   };
 
   return (
-    <div>
+    <div className="w-[200px]">
       {tabs.map((tab, index) => {
-        <Tab
-          key={index}
-          title={tab.title}
-          active={index === activeTabIndex}
-          onClick={() => handleTabCLick(tab.index)}
-          index={index}
-          Icon={tab.icon}
-        />;
+        if (tab.isDropDown) {
+          return (
+            <Dropdown
+              key={index}
+              title={tab.title}
+              Icon={tab.icon}
+              active={index === activeTabIndex}
+              array={tab.array}
+            />
+          );
+        }
+        return (
+          <Tab
+            key={index}
+            title={tab.title}
+            active={index === activeTabIndex}
+            onClick={() => handleTabCLick(tab.index)}
+            index={index}
+            Icon={tab.icon}
+          />
+        );
       })}
-      {console.log(tabs.length)}
-
-      {[1, 2, 3, 4, 5].map((_, index) => (
-        <div key={index}>Hi</div>
-      ))}
     </div>
   );
 };
