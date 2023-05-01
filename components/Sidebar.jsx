@@ -28,7 +28,7 @@ const Sidebar = ({ children }) => {
         <Tabs tabs={sideBarTabs} />
       </div>
 
-      <main className="ml-[13.6rem] w-ful bg-gray-100 h-screen">
+      <main className="ml-[13.6rem] w-ful bg-gray-200 h-screen">
         {children}
       </main>
     </div>
