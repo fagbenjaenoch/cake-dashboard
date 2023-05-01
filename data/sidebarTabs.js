@@ -12,7 +12,7 @@ export const sideBarTabs = [
     title: "Overview",
     icon: <TbRectangle size={25} />,
     isDropDown: true,
-    array: [{ title: "Transactions", icon: <TbRectangle /> }],
+    array: [{ title: "Transactions", icon: <TbRectangle size={20} /> }],
   },
   {
     title: "Cashstack",
