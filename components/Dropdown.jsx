@@ -7,7 +7,9 @@ const Dropdown = ({ title, active, Icon, array, onClick }) => {
   return (
     <>
       <div
-        className="flex gap-5 items-center text-gray-500 hover:text-white cursor-pointer hover:bg-gray-900 p-2 rounded-lg mb-2 relative"
+        className={`flex gap-5 items-center text-gray-500 hover:text-white cursor-pointer hover:bg-gray-900 p-2 rounded-lg mb-2 relative ${
+          isOpen ? "bg-gray-900" : ""
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {active && <TabIndicator />}
