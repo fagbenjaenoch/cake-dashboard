@@ -20,6 +20,7 @@ const Tabs = ({ tabs }) => {
               Icon={tab.icon}
               active={index === activeTabIndex}
               array={tab.array}
+              onClick={() => handleClick(index)}
             />
           );
         }
@@ -28,7 +29,7 @@ const Tabs = ({ tabs }) => {
             key={index}
             title={tab.title}
             active={index === activeTabIndex}
-            onClick={() => handleTabCLick(tab.index)}
+            onClick={() => handleTabCLick(index)}
             index={index}
             Icon={tab.icon}
           />
