@@ -1,44 +1,39 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function MobileWarning() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isWarningOpen, setIsWarningOpen] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-        setIsWarningOpen(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+    setShowWarning(isMobile);
   }, []);
 
-  if (isMobile) {
-    return (
-      <>
-        {isWarningOpen && (
-          <div className="backdrop-filter backdrop-blur-lg text-black p-4 fixed top-0 left-0 w-full h-screen z-50 text-center">
-            <div className="bg-white p-2">
-              <p>Warning: This website is not optimized for mobile devices.</p>
-              <button
-                className="bg-blue-700 hover:bg-blue-600 shadow-lg text-white py-2 px-3 rounded-lg"
-                onClick={() => setIsWarningOpen(false)}
-              >
-                It&apos;s fine
-              </button>
-            </div>
+  const handleDismiss = () => {
+    setShowWarning(false);
+  };
+
+  return (
+    <>
+      {showWarning && (
+        <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-opacity-50 bg-gray-500 flex justify-center items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-lg font-bold mb-4">Warning</h2>
+            <p className="mb-4">
+              This website is not optimized for mobile devices. Some features
+              may not work as expected.
+            </p>
+            <button
+              onClick={handleDismiss}
+              className="bg-red-500 text-white py-2 px-4 rounded-lg"
+            >
+              Dismiss
+            </button>
           </div>
-        )}
-      </>
-    );
-  } else {
-    return null;
-  }
+        </div>
+      )}
+    </>
+  );
 }
 
 export default MobileWarning;
