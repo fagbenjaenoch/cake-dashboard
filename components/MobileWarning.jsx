@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 
+import Checkbox from "./Checkbox";
+
 function MobileWarning() {
   const [showWarning, setShowWarning] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
     setShowWarning(isMobile);
+    const isChecked = localStorage.getItem("isChecked") === "true";
+    setChecked(isChecked);
   }, []);
 
   const handleDismiss = () => {
@@ -15,7 +20,7 @@ function MobileWarning() {
 
   return (
     <>
-      {showWarning && (
+      {showWarning && !checked && (
         <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-opacity-50 backdrop-filter backdrop-blur-lg flex justify-center items-center">
           <div className="bg-white rounded-lg shadow-lg p-6 w-96">
             <h2 className="text-lg font-bold mb-4">Warning</h2>
@@ -29,6 +34,7 @@ function MobileWarning() {
             >
               Dismiss
             </button>
+            <Checkbox label={"Don't remind me again"} />
           </div>
         </div>
       )}
