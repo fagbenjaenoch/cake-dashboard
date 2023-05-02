@@ -20,7 +20,7 @@ import { FaMale, FaPrescription } from "react-icons/fa";
 const Sidebar = ({ children }) => {
   return (
     <div className="">
-      <div className="fixed h-screen bg-black border-r-gray p-4 text-white shadow-xl text-sm flex flex-col justify-between">
+      <div className="fixed w- h-screen bg-black border-r-gray p-4 text-white shadow-xl text-sm flex flex-col justify-between">
         <div className="flex flex-col justify-between">
           <div className="mb-4">
             <span className="text-extrabold text-lg">Cake </span>
@@ -53,9 +53,7 @@ const Sidebar = ({ children }) => {
         </div>
       </div>
 
-      <main className="ml-[13.6rem] w-ful bg-gray-200 h-screen">
-        {children}
-      </main>
+      <main className="ml-[232px] w-ful bg-gray-200 h-screen">{children}</main>
     </div>
   );
 };
