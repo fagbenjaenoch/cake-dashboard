@@ -16,8 +16,8 @@ function MobileWarning() {
   return (
     <>
       {showWarning && (
-        <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-opacity-50 bg-gray-500 backdrop-filter backdrop-blur-lg flex justify-center items-center">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-opacity-50 backdrop-filter backdrop-blur-lg flex justify-center items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
             <h2 className="text-lg font-bold mb-4">Warning</h2>
             <p className="mb-4">
               This website is not optimized for mobile devices. Some features

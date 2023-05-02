@@ -50,7 +50,7 @@ const SearchBar = () => {
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className={`bg-transparent text-gray-800 outline-none w-full placeholder:text-gray-800 text-gray-100 ${
+        className={`bg-transparent text-gray-800 outline-none w-full placeholder:text-gray-800 ${
           isHovered && !isFocused && "placeholder:text-gray-500"
         } ${isHovered && isFocused && "placeholder:text-white"} ${
           isFocused && "placeholder:text-white"
