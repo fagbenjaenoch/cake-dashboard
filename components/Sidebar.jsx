@@ -33,6 +33,7 @@ const Sidebar = ({ children }) => {
           </div>
         </div>
         <div>
+          <span className="text-gray-500 mb-4">Profile</span>
           <div className="flex flex-row items-center justify-between mb-4">
             <FaMale size={25} />
             <div className="flex flex-col gap-0 items-center">
@@ -43,9 +44,9 @@ const Sidebar = ({ children }) => {
                 Product Designer
               </span>
             </div>
-            <TbDotsVertical />
+            <TbDotsVertical className="cursor-pointer" />
           </div>
-          <div className=" flex gap-1 items-center bg-gray-700 hover:bg-gray-600 cursor-pointer p-2 rounded-lg">
+          <div className=" flex gap-1 items-center bg-gray-900 hover:bg-gray-800 cursor-pointer p-2 rounded-lg">
             <TbLogout size={25} />
             <span className="ml-4">Log out</span>
           </div>
