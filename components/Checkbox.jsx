@@ -15,7 +15,7 @@ function Checkbox({ label }) {
   };
 
   return (
-    <div>
+    <div className='mt-4'>
       <input type="checkbox" checked={checked} onChange={handleOnChange} />
       <label className="ml-2">{label}</label>
     </div>
